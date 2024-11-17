@@ -85,7 +85,7 @@ app.get('/restaurants/filter', async (req, res) => {
 });
 app.get('/restaurants/sort-by-rating', async (req, res) => {
   try {
-    const query = 'SELECT * from restaurants ORDER BY rating DESc';
+    const query = 'SELECT * from restaurants ORDER BY rating DESC';
     const response = await db.all(query, []);
     if (response.length > 0) {
       res.status(200).json({ restaurants: response });
